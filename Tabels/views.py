@@ -12,7 +12,7 @@ def index(request):
     return render(request,'Details.html',context)
 
 def Home_Page(request):
-    return render(request,'Home.html')
+    return render(request,'index.html')
 
 def Show_Details(request):
     Details     =   Tabel_Data.objects.all()
