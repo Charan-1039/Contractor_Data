@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Export{% endblock title %}
+
+{% block search %}
+  
+<form action="{% url 'Search_ExportData' %}" method="GET">
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="TALUK" placeholder="First name" aria-label="First name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="MONTH" placeholder="Last name" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="YEAR" placeholder="Last name" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="ACC" placeholder="Last name" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="submit" class="btn-group-sm" value="Search" placeholder="Last name" aria-label="Last name">
+        </div>
+    </div>
+    
+</form>
+
+{% endblock search %}
+
+
+

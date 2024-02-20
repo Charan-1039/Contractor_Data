@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+
+{% block title %} View details  {% endblock title %}
+
+
+
+{% block search %}
+<form action="{% url 'Export_Data' %}" method="GET" >
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="TALUK" placeholder="Taluk" aria-label="First name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="MONTH" placeholder="Month" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="YEAR" placeholder="Year" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="ACC" placeholder="Account" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="submit" class="btn-group-sm" value="Search" placeholder="Last name" aria-label="Last name">
+        </div>
+    </div>
+    
+</form>
+{% endblock search %}
+
+{% block body %}
+<div class="Table_container">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>SL NO</th>
+                <th>Title</th>
+                <th>Taluk</th>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Head Account</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for D in Data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td><a href="/view_Data/{{D.id}}"
+                        style="text-decoration: none; color: rgb(37, 37, 37);">{{D.Data_Title}}</a></td>
+                <td>{{D.Taluk}}</td>
+                <td>{{D.Year}}</td>
+                <td>{{D.Month}}</td>
+                <td>{{D.Account}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

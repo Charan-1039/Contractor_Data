@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %} Add Details  {% endblock title %}
+
+{% block body %}
+
+<div class="container text-center">
+  
+  <h2>{{D}}</h2>
+  <form action="{% url 'Details' %}" method="POST">
+    {% csrf_token %}
+    <!--<div class="d-flex justify-content-evenly">
+        <div class="d-flex justify-content-evenly" > 
+          <select class="form-select" id="autoSizingSelect">
+            {% for T in Taluk %}
+            <option default value="{{T.Taluk_Title}}">{{T.Taluk_Title}}</option>
+            {% endfor %}
+          </select>
+        <div>
+        <div class="d-flex justify-content-evenly" >
+          <select class="form-select" id="autoSizingSelect">
+            {% for M in Month_Field %}
+            <option value="{{M.Month_Title}}">{{M.Month_Title}}</option>
+            {% endfor %}
+          </select>
+        <div>
+        <div class="d-flex justify-content-evenly" >
+          <select  class="form-select" id="autoSizingSelect" style='margin: 0px 15px;' >
+            {% for A in HeadAccounr_Field %}
+            <option value="{{A.Account_Title}}" style="padding: 0px 15px;">{{A.Account_Title}}</option>
+            {% endfor %}
+          </select>
+        <div>    
+      
+      <div>-->
+
+
+    <div class="d-flex justify-content-evenly">
+      <select class="form-select p-3 m-3" name="TALUK" aria-label="Default select example">
+        {% for T in Taluk %}
+        <option default value="{{T.Taluk_Title}}">{{T.Taluk_Title}}</option>
+        {% endfor %}
+      </select>
+      <select class="form-select  p-3 m-3" name="MONTH" aria-label="Default select example">
+        {% for M in Month_Field %}
+        <option value="{{M.Month_Title}}">{{M.Month_Title}}</option>
+        {% endfor %}
+      </select>
+      <select class="form-select  p-3 m-3" name="ACC" aria-label="Default select example">
+        {% for A in HeadAccounr_Field %}
+        <option aria-readonly="true" value="{{A.Account_Title}}" style="padding: 0px 15px;">{{A.Account_Title}}</option>
+        {% endfor %}
+      </select>
+      <select class="form-select  p-3 m-3" name="YEAR" aria-label="Default select example" id="ddlYears">
+        
+        <option value="{{A.Account_Title}}" style="padding: 0px 15px;">Year</option>
+        
+      </select>
+    </div>
+    <div class="input-group mb-2">
+      <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" name="TITLE"
+        aria-describedby="inputGroup-sizing-default">
+    </div>
+    <button class="btn btn-outline-secondary" type="submit" href="{% url 'Details' %}" onclick="myFunction()">Button</button>
+
+
+
+
+  </form>
+</div>
+
+{% endblock body %}
