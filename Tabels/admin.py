@@ -12,7 +12,7 @@ class AdminTabel_Data(admin.ModelAdmin):
     list_display = ['Taluk','Year','Month','Account']
 
 
-
+                    
 # Register your models here.
 admin.site.register(Month_Field)
 admin.site.register(Taluk_Field)

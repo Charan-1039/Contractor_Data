@@ -15,7 +15,7 @@ def Home_Page(request):
     return render(request,'index.html')
 
 def Show_Details(request):
-    Details     =   Tabel_Data.objects.all()
+    Details     =   Tabel_Data.objects.all()    
     context     =   {'Data':Details}
     return render(request,'ShowDetails.html',context)
 
